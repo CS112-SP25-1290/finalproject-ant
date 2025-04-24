@@ -16,7 +16,7 @@ public class Weapon {
     }
 
     public int getDamage(){
-    reutrn damage;
+        reutrn damage;
     }
 
     public void attack(){
