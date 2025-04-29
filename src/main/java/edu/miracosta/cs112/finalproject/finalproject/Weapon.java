@@ -1,3 +1,5 @@
+package edu.miracosta.cs112.finalproject.finalproject;
+
 public class Weapon {
 
     public String name;
@@ -16,7 +18,7 @@ public class Weapon {
     }
 
     public int getDamage(){
-        reutrn damage;
+        return damage;
     }
 
     public void attack(){
@@ -27,23 +29,23 @@ public class Weapon {
 }
 class Fist extends Weapon {
     public Fist() {
-        super("Fist", 1);
+        super("edu.miracosta.cs112.finalproject.finalproject.Fist", 1);
     }
 }
 
 class Sword extends Weapon {
     public Sword() {
-        super("Sword", 5);
+        super("edu.miracosta.cs112.finalproject.finalproject.Sword", 5);
     }
 }
 
-public class DungeonGame {
+class DungeonGame {
     public static void main(String[] args) {
         Weapon fist = new Fist();
         Weapon sword = new Sword();
 
-        fist.attack();  // "You attack with Fist dealing 1 damage!"
-        sword.attack(); // "You attack with Sword dealing 5 damage!"
+        fist.attack();  // "You attack with edu.miracosta.cs112.finalproject.finalproject.Fist dealing 1 damage!"
+        sword.attack(); // "You attack with edu.miracosta.cs112.finalproject.finalproject.Sword dealing 5 damage!"
     }
 }
 
