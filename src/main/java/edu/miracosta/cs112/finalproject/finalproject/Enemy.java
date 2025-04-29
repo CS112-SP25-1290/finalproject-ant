@@ -4,19 +4,21 @@ public abstract class Enemy {
 
     /********** CONSTANTS **********/
     public static final int DEFAULT_HP = 10;
+    public static final Weapon DEFAULT_WEAPON = new Weapon("Punch", 1);
 
 
     /********** INSTANCE VARIABLES **********/
     private int hp;
+    private Weapon weapon;
 
     /********** CONSTRUCTORS **********/
 
     public Enemy() {
-        this(DEFAULT_HP);
+        this(DEFAULT_HP, DEFAULT_WEAPON);
     }
 
-    public Enemy(int hp) {
-        if(!this.setAll(hp)) {
+    public Enemy(int hp, Weapon weapon) {
+        if(!this.setAll(hp, weapon)) {
             System.out.println("Invalid data given to full constructor.");
             System.exit(0);
         }
@@ -33,9 +35,18 @@ public abstract class Enemy {
         }
     }
 
+    public boolean setWeapon(Weapon weapon) {
+        if(weapon.getName() != null && weapon.getDamage() >= 0) {
+            this.weapon = weapon;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     //While this is currently pointless since there is only one variable for enemy, setAll is created for smoother coding if more variables are added
-    public boolean setAll(int hp) {
-        return this.setHP(hp);
+    public boolean setAll(int hp, Weapon weapon) {
+        return this.setHP(hp) && this.setWeapon(weapon);
     }
 
 
@@ -43,6 +54,10 @@ public abstract class Enemy {
 
     public int getHP() {
         return this.hp;
+    }
+
+    public Weapon getWeapon() {
+        return this.weapon;
     }
 
     /********** OTHER REQUIRED METHODS **********/
