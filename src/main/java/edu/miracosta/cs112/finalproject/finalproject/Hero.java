@@ -6,19 +6,23 @@ public abstract class Hero {
     public static final String DEFAULT_NAME = "Steve";
     public static final int DEFAULT_HEARTS = 20;
 
+    public static final Weapon DEFAULT_WEAPON1 = new Weapon("Fist", 1);
+
     /************ INSTANCE VARIABLES *************/
     private String name = null;
     private int hearts = 0;
+    private Weapon weapon1 = null;
 
-    /************ CONSTRUCTORS *************/
+    /*********** CONSTRUCTORS *************/
 
     /** FULL CONSTRUCTOR
      * @SabraReed
      * @param name
      * @param hearts
+     * @param weapon1
      */
-    public Hero(String name, int hearts) {
-        if (!this.setAll(name, hearts)) {
+    public Hero(String name, int hearts, Weapon weapon1) {
+        if (!this.setAll(name, hearts, weapon1)) {
             System.out.println("ERROR: invalid data given to full GameCharacter constructor");
             System.exit(0);
         }
@@ -28,7 +32,7 @@ public abstract class Hero {
      * @SabraReed
      */
     public Hero() {
-       this(DEFAULT_NAME, DEFAULT_HEARTS);
+        this(DEFAULT_NAME, DEFAULT_HEARTS, DEFAULT_WEAPON1);
     }
 
     public Hero(Hero original) {
@@ -36,7 +40,7 @@ public abstract class Hero {
             System.out.println("ERROR: null data given to copy constructor");
             System.exit(0);
         } else {
-            this.setAll(name, hearts);
+            this.setAll(original.name, original.hearts, original.weapon1);
         }
     }
 
@@ -70,14 +74,29 @@ public abstract class Hero {
         }
     }
 
+    /** Set Weapon 1
+     * @SabraReed
+     * @param weapon
+     * @return true if weapon 1 equals a new Weapon
+     */
+    public boolean setWeapon1(Weapon weapon) {
+        if (weapon != null) {
+            this.weapon1 = new Weapon(weapon);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     /** Set All
      * @SabraReed
      * @param name
      * @param hearts
      * @return
      */
-    public boolean setAll(String name, int hearts) {
-        return this.setName(name) && this.setHearts(hearts);
+    public boolean setAll(String name, int hearts, Weapon weapon1) {
+
+        return this.setName(name) && this.setHearts(hearts) && this.setWeapon1(weapon1);
     }
 
     /*********** GETTERS *************/
@@ -97,11 +116,20 @@ public abstract class Hero {
         return hearts;
     }
 
-    /*********** OTHER REQUIRED METHODS *************/
-    @Override
-    public String toString() {
-
+    /** Get Weapon 1
+     * @SabraReed
+     * @return Character's Weapon
+     */
+    public Weapon getWeapon1() {
+        return new Weapon(this.weapon1);
     }
+
+
+    /*********** OTHER REQUIRED METHODS *************/
+//    @Override
+//    public String toString() {
+//        //String weapons = "Equipped" = { + this.Sword + };
+//    }
 
     /*********** ABSTRACT METHODS *************/
 

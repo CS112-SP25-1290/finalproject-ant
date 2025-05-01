@@ -1,52 +1,21 @@
 package edu.miracosta.cs112.finalproject.finalproject;
 
 public class Weapon {
+    /************ CONSTANTS *************/
+    public static final String DEFAULT_NAME = "Fist";
+    public static final int DEFAULT_DAMAGE = 1;
 
-    public String name;
+    /************ INSTANCE VARIABLES *************/
+    private String name;
+    private int damage;
 
-    public int damage;
+    /*********** CONSTRUCTORS *************/
 
-    public Weapon( String name, int damage){
+    /*********** SETTERS *************/
 
-        this.name=name;
-        this.damage=damage;
+    /*********** GETTERS *************/
 
-    }
-
-    public String getName(){
-        return name;
-    }
-
-    public int getDamage(){
-        return damage;
-    }
-
-    public void attack(){
-
-        System.out.println( " You attack with " + name + " dealing" + damage + " damage!");
-
-    }
-}
-class Fist extends Weapon {
-    public Fist() {
-        super("edu.miracosta.cs112.finalproject.finalproject.Fist", 1);
-    }
-}
-
-class Sword extends Weapon {
-    public Sword() {
-        super("edu.miracosta.cs112.finalproject.finalproject.Sword", 5);
-    }
-}
-
-class DungeonGame {
-    public static void main(String[] args) {
-        Weapon fist = new Fist();
-        Weapon sword = new Sword();
-
-        fist.attack();  // "You attack with edu.miracosta.cs112.finalproject.finalproject.Fist dealing 1 damage!"
-        sword.attack(); // "You attack with edu.miracosta.cs112.finalproject.finalproject.Sword dealing 5 damage!"
-    }
+    /*********** OTHER REQUIRED METHODS *************/
 }
 
 
