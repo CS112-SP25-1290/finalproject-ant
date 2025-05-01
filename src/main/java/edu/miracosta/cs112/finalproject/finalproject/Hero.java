@@ -5,7 +5,6 @@ public abstract class Hero {
     /************ CONSTANTS *************/
     public static final String DEFAULT_NAME = "Steve";
     public static final int DEFAULT_HEARTS = 20;
-
     public static final Weapon DEFAULT_WEAPON1 = new Weapon("Fist", 1);
 
     /************ INSTANCE VARIABLES *************/
