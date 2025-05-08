@@ -19,8 +19,8 @@ public abstract class Enemy {
 
     public Enemy(int hp, Weapon weapon) {
         if(!this.setAll(hp, weapon)) {
-            System.out.println("Invalid data given to full constructor.");
-            System.exit(0);
+            //System.out.println("Invalid data given to full constructor.");
+            //System.exit(0);
         }
     }
 
