@@ -1,4 +1,9 @@
 package edu.miracosta.cs112.finalproject.finalproject;
 
-public class Slime {
+public class Slime extends Enemy {
+
+    /********** CONSTANTS ***********/
+    public static final int DEFAULT_HP = 10;
+
+    public static final Weapon DEFAULT_WEAPON = new Weapon();
 }

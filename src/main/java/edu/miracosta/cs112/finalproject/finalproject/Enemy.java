@@ -65,4 +65,7 @@ public abstract class Enemy {
     public boolean equals(Enemy other) {
         return this.hp == other.hp && this.weapon.equals(other.weapon);
     }
+
+    /********** ABSTRACT METHODS **********/
+    public abstract boolean takeDamage(int hearts);
 }
