@@ -131,6 +131,8 @@ public abstract class Hero {
 //    }
 
     /*********** ABSTRACT METHODS *************/
+    public abstract boolean takeDamage(int hearts);
+
 
     /************ HELPER METHODS *************/
 
