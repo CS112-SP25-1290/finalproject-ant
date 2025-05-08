@@ -1,7 +1,5 @@
 package edu.miracosta.cs112.finalproject.finalproject;
 
-import java.util.Random;
-
 public class Zombie extends Enemy {
 
     /********** CONSTANTS **********/
@@ -30,6 +28,19 @@ public class Zombie extends Enemy {
 
     public boolean setAll(int hp, Weapon weapon, int regen) {
         return super.setAll(hp, weapon) && this.setRegen(regen);
+    }
+
+    /********** GETTERS **********/
+
+    public int getRegen() {
+        return this.regen;
+    }
+
+    /********** OTHER REQUIRED METHODS **********/
+
+    public void doesZombieRegen(int regen, int hp) {
+        hp += regen;
+
     }
 
 

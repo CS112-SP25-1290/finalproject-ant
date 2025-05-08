@@ -44,7 +44,7 @@ public abstract class Enemy {
         }
     }
 
-    //While this is currently pointless since there is only one variable for enemy, setAll is created for smoother coding if more variables are added
+
     public boolean setAll(int hp, Weapon weapon) {
         return this.setHP(hp) && this.setWeapon(weapon);
     }
