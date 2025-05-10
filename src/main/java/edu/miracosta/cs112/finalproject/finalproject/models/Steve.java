@@ -46,7 +46,7 @@ public class Steve extends Hero {
     }
 
     @Override
-    public void takeTurn(Hero hero) {
+    public void takeTurn(Enemy enemy) {
 
     }
 
