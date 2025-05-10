@@ -48,4 +48,8 @@ public class Skeleton extends Enemy {
 
     }
 
+    @Override
+    public boolean takeDamage(int hearts) {
+        return false;
+    }
 }

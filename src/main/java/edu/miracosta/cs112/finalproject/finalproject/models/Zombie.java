@@ -43,5 +43,10 @@ public class Zombie extends Enemy {
 
     }
 
+    @Override
+    public boolean takeDamage(int hearts) {
+        return false;
+    }
+
 
 }
