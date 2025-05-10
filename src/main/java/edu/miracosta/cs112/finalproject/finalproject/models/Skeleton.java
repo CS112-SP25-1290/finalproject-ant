@@ -52,4 +52,10 @@ public class Skeleton extends Enemy {
     public boolean takeDamage(int hearts) {
         return false;
     }
+
+    @Override
+    public void takeTurn(Hero hero) {
+
+    }
+
 }

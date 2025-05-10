@@ -133,6 +133,12 @@ public abstract class Hero {
     /*********** ABSTRACT METHODS *************/
     public abstract boolean takeDamage(int hearts);
 
+    public abstract void takeTurn(Enemy enemy);
+
+    public boolean isAlive() {
+        return hearts > 0;
+    }
+
 
     /************ HELPER METHODS *************/
 

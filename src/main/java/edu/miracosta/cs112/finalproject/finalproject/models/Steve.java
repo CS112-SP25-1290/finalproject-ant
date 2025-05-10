@@ -45,4 +45,9 @@ public class Steve extends Hero {
         return false;
     }
 
+    @Override
+    public void takeTurn(Hero hero) {
+
+    }
+
 }

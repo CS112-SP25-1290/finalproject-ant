@@ -68,4 +68,10 @@ public abstract class Enemy {
 
     /********** ABSTRACT METHODS **********/
     public abstract boolean takeDamage(int hearts);
+
+    public abstract void takeTurn(Hero hero);
+
+    public boolean isAlive() {
+        return hp > 0;
+    }
 }

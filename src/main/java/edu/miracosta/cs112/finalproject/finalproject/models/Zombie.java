@@ -1,5 +1,7 @@
 package edu.miracosta.cs112.finalproject.finalproject.models;
 
+import java.util.Random;
+
 public class Zombie extends Enemy {
 
     /********** CONSTANTS **********/
@@ -38,7 +40,7 @@ public class Zombie extends Enemy {
 
     /********** OTHER REQUIRED METHODS **********/
 
-    public void doesZombieRegen(int regen, int hp) {
+    public void doesZombieRegen(int hp) {
         hp += regen;
 
     }
@@ -46,6 +48,16 @@ public class Zombie extends Enemy {
     @Override
     public boolean takeDamage(int hearts) {
         return false;
+    }
+
+    @Override
+    public void takeTurn(Hero hero) {
+        Random rng = new Random();
+        int regenChance = rng.nextInt(10) + 1;
+        if(regenChance <= 5) {
+            //doesZombieRegen(int hp);
+        }
+
     }
 
 
