@@ -8,18 +8,14 @@ import javafx.scene.Scene; //class for specific view
 import javafx.scene.control.Button;
 import javafx.stage.Stage; //class for window
 import java.io.IOException;
-import java.util.Random;
 
 public class HelloApplication extends Application {
 
-    Random rng = new Random();
-
-    public Button start;
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("menu-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 450, 600);
-        stage.setTitle("Hello!");
+        stage.setTitle("Dungeon Crawler");
         stage.setScene(scene);
         stage.show();
     }

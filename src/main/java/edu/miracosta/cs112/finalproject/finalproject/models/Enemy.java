@@ -8,8 +8,8 @@ public abstract class Enemy {
 
 
     /********** INSTANCE VARIABLES **********/
-    private int hp;
-    private Weapon weapon;
+    protected int hp;
+    protected Weapon weapon;
 
     /********** CONSTRUCTORS **********/
 
@@ -66,8 +66,15 @@ public abstract class Enemy {
         return this.hp == other.hp && this.weapon.equals(other.weapon);
     }
 
+    public void takeDamage(int damage) {
+        this.hp -= damage;
+        if(this.hp < 0) {
+            this.hp = 0;
+        }
+    }
+
     /********** ABSTRACT METHODS **********/
-    public abstract boolean takeDamage(int hearts);
+
 
     public abstract void takeTurn(Hero hero);
 

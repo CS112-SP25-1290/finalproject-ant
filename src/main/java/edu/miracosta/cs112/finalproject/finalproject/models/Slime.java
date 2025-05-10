@@ -7,10 +7,7 @@ public class Slime extends Enemy {
 
     public static final Weapon DEFAULT_WEAPON = new Weapon();
 
-    @Override
-    public boolean takeDamage(int hearts) {
-        return false;
-    }
+
 
     /*********ABSTRACT METHODS*********/
 

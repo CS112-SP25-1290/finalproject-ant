@@ -130,14 +130,16 @@ public abstract class Hero {
 //        //String weapons = "Equipped" = { + this.Sword + };
 //    }
 
+    public boolean isAlive() {
+        return hearts > 0;
+    }
+
     /*********** ABSTRACT METHODS *************/
     public abstract boolean takeDamage(int hearts);
 
     public abstract void takeTurn(Enemy enemy);
 
-    public boolean isAlive() {
-        return hearts > 0;
-    }
+
 
 
     /************ HELPER METHODS *************/

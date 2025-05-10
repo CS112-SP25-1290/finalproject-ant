@@ -46,17 +46,13 @@ public class Zombie extends Enemy {
     }
 
     @Override
-    public boolean takeDamage(int hearts) {
-        return false;
-    }
-
-    @Override
     public void takeTurn(Hero hero) {
         Random rng = new Random();
         int regenChance = rng.nextInt(10) + 1;
         if(regenChance <= 5) {
-            //doesZombieRegen(int hp);
+            doesZombieRegen(hp);
         }
+        hero.takeDamage(this.weapon.getDamage());
 
     }
 

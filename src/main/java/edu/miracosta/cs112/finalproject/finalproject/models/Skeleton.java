@@ -39,23 +39,24 @@ public class Skeleton extends Enemy {
     /********** OTHER REQUIRED METHODS **********/
 
     public boolean rollDodgeChance(int dodgeChance) {
-        dodgeChance = rng.nextInt(10) + 1;
-        if(dodgeChance <= 5) {
-            return false;
-        } else {
-            return true;
-        }
+        int chance = rng.nextInt(10) + 1;
+        return chance > dodgeChance;
 
     }
 
-    @Override
-    public boolean takeDamage(int hearts) {
-        return false;
-    }
 
     @Override
     public void takeTurn(Hero hero) {
+        hero.takeDamage(this.weapon.getDamage());
+    }
 
+    @Override
+    public void takeDamage(int damage) {
+        if(rollDodgeChance(dodgeChance)) {
+            System.out.println("Dodge");
+        } else {
+            super.takeDamage(damage);
+        }
     }
 
 }
