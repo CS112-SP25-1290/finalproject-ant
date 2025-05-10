@@ -1,4 +1,4 @@
-package edu.miracosta.cs112.finalproject.finalproject;
+package edu.miracosta.cs112.finalproject.finalproject.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
