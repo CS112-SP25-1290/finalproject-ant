@@ -11,4 +11,11 @@ public class Slime extends Enemy {
     public boolean takeDamage(int hearts) {
         return false;
     }
+
+    /*********ABSTRACT METHODS*********/
+
+    @Override
+    public void takeTurn(Hero hero) {
+
+    }
 }
