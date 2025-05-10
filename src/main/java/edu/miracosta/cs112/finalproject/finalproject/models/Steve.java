@@ -1,4 +1,4 @@
-package edu.miracosta.cs112.finalproject.finalproject;
+package edu.miracosta.cs112.finalproject.finalproject.models;
 
 public class Steve extends Hero {
 
@@ -29,6 +29,7 @@ public class Steve extends Hero {
         this(Steve.DEFAULT_NAME, Steve.DEFAULT_HEARTS, Steve.DEFAULT_WEAPON);
     }
 
+
     /** Copy Constructor
      * @SabraReed
      * @param original
@@ -38,4 +39,10 @@ public class Steve extends Hero {
     }
 
     /************** OTHER METHODS ***************/
+
+    @Override
+    public boolean takeDamage(int hearts) {
+        return false;
+    }
+
 }

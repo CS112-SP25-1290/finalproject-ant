@@ -1,4 +1,4 @@
-package edu.miracosta.cs112.finalproject.finalproject;
+package edu.miracosta.cs112.finalproject.finalproject.models;
 
 public abstract class Enemy {
 
@@ -44,7 +44,7 @@ public abstract class Enemy {
         }
     }
 
-    //While this is currently pointless since there is only one variable for enemy, setAll is created for smoother coding if more variables are added
+
     public boolean setAll(int hp, Weapon weapon) {
         return this.setHP(hp) && this.setWeapon(weapon);
     }
@@ -65,4 +65,7 @@ public abstract class Enemy {
     public boolean equals(Enemy other) {
         return this.hp == other.hp && this.weapon.equals(other.weapon);
     }
+
+    /********** ABSTRACT METHODS **********/
+    public abstract boolean takeDamage(int hearts);
 }

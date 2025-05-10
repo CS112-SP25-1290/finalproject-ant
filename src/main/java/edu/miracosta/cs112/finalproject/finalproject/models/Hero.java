@@ -1,4 +1,4 @@
-package edu.miracosta.cs112.finalproject.finalproject;
+package edu.miracosta.cs112.finalproject.finalproject.models;
 
 public abstract class Hero {
 
@@ -131,6 +131,8 @@ public abstract class Hero {
 //    }
 
     /*********** ABSTRACT METHODS *************/
+    public abstract boolean takeDamage(int hearts);
+
 
     /************ HELPER METHODS *************/
 
