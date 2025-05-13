@@ -10,7 +10,8 @@ public abstract class Hero {
     /************ INSTANCE VARIABLES *************/
     private String name = null;
     private int hearts = 0;
-    private Weapon weapon1 = null;
+    private Weapon weapon = null;
+    protected int maxHearts;
 
     /*********** CONSTRUCTORS *************/
 
@@ -18,12 +19,14 @@ public abstract class Hero {
      * @SabraReed
      * @param name
      * @param hearts
-     * @param weapon1
+     * @param weapon
      */
-    public Hero(String name, int hearts, Weapon weapon1) {
-        if (!this.setAll(name, hearts, weapon1)) {
+    public Hero(String name, int hearts, Weapon weapon) {
+        if (!this.setAll(name, hearts, weapon)) {
             System.out.println("ERROR: invalid data given to full GameCharacter constructor");
             System.exit(0);
+        } else {
+            this.maxHearts = hearts;
         }
     }
 
@@ -39,7 +42,7 @@ public abstract class Hero {
             System.out.println("ERROR: null data given to copy constructor");
             System.exit(0);
         } else {
-            this.setAll(original.name, original.hearts, original.weapon1);
+            this.setAll(original.name, original.hearts, original.weapon);
         }
     }
 
@@ -78,9 +81,9 @@ public abstract class Hero {
      * @param weapon
      * @return true if weapon 1 equals a new Weapon
      */
-    public boolean setWeapon1(Weapon weapon) {
+    public boolean setWeapon(Weapon weapon) {
         if (weapon != null) {
-            this.weapon1 = new Weapon(weapon);
+            this.weapon = new Weapon(weapon);
             return true;
         } else {
             return false;
@@ -95,7 +98,7 @@ public abstract class Hero {
      */
     public boolean setAll(String name, int hearts, Weapon weapon1) {
 
-        return this.setName(name) && this.setHearts(hearts) && this.setWeapon1(weapon1);
+        return this.setName(name) && this.setHearts(hearts) && this.setWeapon(weapon1);
     }
 
     /*********** GETTERS *************/
@@ -119,8 +122,12 @@ public abstract class Hero {
      * @SabraReed
      * @return Character's Weapon
      */
-    public Weapon getWeapon1() {
-        return new Weapon(this.weapon1);
+    public Weapon getWeapon() {
+        return new Weapon(this.weapon);
+    }
+
+    public int getMaxHearts() {
+        return this.maxHearts;
     }
 
 
@@ -134,10 +141,18 @@ public abstract class Hero {
         return hearts > 0;
     }
 
-    /*********** ABSTRACT METHODS *************/
-    public abstract boolean takeDamage(int hearts);
+    public void takeDamage(int damage) {
+        this.hearts -= damage;
+        if (this.hearts < 0) {
+            this.hearts = 0;
+        }
+    }
 
-    public abstract void takeTurn(Enemy enemy);
+    /*********** ABSTRACT METHODS *************/
+
+    public boolean takeTurn(Enemy enemy) {
+        return enemy.takeDamage(this.getWeapon().getDamage());
+    }
 
 
 

@@ -40,14 +40,6 @@ public class Steve extends Hero {
 
     /************** OTHER METHODS ***************/
 
-    @Override
-    public boolean takeDamage(int hearts) {
-        return false;
-    }
 
-    @Override
-    public void takeTurn(Enemy enemy) {
-
-    }
 
 }

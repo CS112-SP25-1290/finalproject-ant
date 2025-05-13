@@ -5,12 +5,12 @@ import java.util.Random;
 public class Skeleton extends Enemy {
     /********** CONSTANTS **********/
 
-    public int DEFAULT_DODGE_CHANCE = 0;
+    public static final int DEFAULT_DODGE_CHANCE = 0;
 
     /********** INSTANCE VARIABLES **********/
 
-    Random rng = new Random();
-    public int dodgeChance;
+    private static final Random rng = new Random();
+    public int dodgeChance; // 1-3 is a dodge, 4-10 is a hit
 
     /********** CONSTRUCTORS **********/
 
@@ -38,12 +38,11 @@ public class Skeleton extends Enemy {
 
     /********** OTHER REQUIRED METHODS **********/
 
-    public boolean rollDodgeChance(int dodgeChance) {
+    public boolean rollDodgeChance() {
         int chance = rng.nextInt(10) + 1;
-        return chance > dodgeChance;
+        return chance < this.dodgeChance;
 
     }
-
 
     @Override
     public void takeTurn(Hero hero) {
@@ -51,11 +50,13 @@ public class Skeleton extends Enemy {
     }
 
     @Override
-    public void takeDamage(int damage) {
-        if(rollDodgeChance(dodgeChance)) {
+    public boolean takeDamage(int damage) {
+        if(rollDodgeChance()) {
             System.out.println("Dodge");
+            return false; //No damage
         } else {
             super.takeDamage(damage);
+            return true; //Damage
         }
     }
 

@@ -12,7 +12,7 @@ public class Zombie extends Enemy {
 
     /********** CONSTRUCTORS **********/
 
-    public Zombie(int hp, Weapon weapon) {
+    public Zombie(int hp, Weapon weapon, int regen) {
         super(hp, weapon);
         this.regen = regen;
     }
@@ -40,8 +40,8 @@ public class Zombie extends Enemy {
 
     /********** OTHER REQUIRED METHODS **********/
 
-    public void doesZombieRegen(int hp) {
-        hp += regen;
+    public void doesZombieRegen() {
+        this.hp += regen;
 
     }
 
@@ -50,7 +50,7 @@ public class Zombie extends Enemy {
         Random rng = new Random();
         int regenChance = rng.nextInt(10) + 1;
         if(regenChance <= 5) {
-            doesZombieRegen(hp);
+            doesZombieRegen();
         }
         hero.takeDamage(this.weapon.getDamage());
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.miracosta.cs112.finalproject.finalproject.controllers.SelectionController">
+   <children>
+      <ImageView fx:id="steveHead"
+                 fitHeight="106.0"
+                 fitWidth="95.0"
+                 layoutX="76.0"
+                 layoutY="140.0"
+                 onMouseClicked="#onSteveClicked"
+                 pickOnBounds="true"
+                 preserveRatio="true">
+         <image>
+            <Image url="@../../../../../images/SteveHead.jpg" />
+         </image></ImageView>
+
+      <ImageView fx:id="alexHead"
+                 fitHeight="95.0"
+                 fitWidth="95.0"
+                 layoutX="275.0"
+                 layoutY="140.0"
+                 onMouseClicked="#onAlexClicked"
+                 pickOnBounds="true"
+                 preserveRatio="true">
+         <image>
+            <Image url="@../../../../../images/AlexHead.png" />
+         </image>
+      </ImageView>
+
+   </children>
+
+</Pane>

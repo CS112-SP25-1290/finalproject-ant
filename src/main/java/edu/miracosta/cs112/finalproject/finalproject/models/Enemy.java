@@ -9,6 +9,7 @@ public abstract class Enemy {
 
     /********** INSTANCE VARIABLES **********/
     protected int hp;
+    protected int maxHP;
     protected Weapon weapon;
 
     /********** CONSTRUCTORS **********/
@@ -19,8 +20,9 @@ public abstract class Enemy {
 
     public Enemy(int hp, Weapon weapon) {
         if(!this.setAll(hp, weapon)) {
-            //System.out.println("Invalid data given to full constructor.");
-            //System.exit(0);
+            System.out.println("Bad data given to full enemy constructor");
+        } else {
+            this.maxHP = hp;
         }
     }
 
@@ -60,17 +62,26 @@ public abstract class Enemy {
         return this.weapon;
     }
 
+    public int getMaxHP() {
+        return this.maxHP;
+    }
+
     /********** OTHER REQUIRED METHODS **********/
 
     public boolean equals(Enemy other) {
         return this.hp == other.hp && this.weapon.equals(other.weapon);
     }
 
-    public void takeDamage(int damage) {
+    public boolean takeDamage(int damage) {
         this.hp -= damage;
         if(this.hp < 0) {
             this.hp = 0;
         }
+        return true;
+    }
+
+    public boolean isAlive() {
+        return hp > 0;
     }
 
     /********** ABSTRACT METHODS **********/
@@ -78,7 +89,5 @@ public abstract class Enemy {
 
     public abstract void takeTurn(Hero hero);
 
-    public boolean isAlive() {
-        return hp > 0;
-    }
+
 }

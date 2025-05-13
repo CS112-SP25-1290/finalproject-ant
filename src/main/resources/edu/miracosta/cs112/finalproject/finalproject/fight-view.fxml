@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.miracosta.cs112.finalproject.finalproject.controllers.FightController">
+   <children>
+      <Label layoutX="83.0" layoutY="37.0" text="Hero Health" />
+      <Label layoutX="309.0" layoutY="37.0" text="Enemy Health" />
+      <ProgressBar fx:id="playerHealthBar" layoutX="40.0" layoutY="54.0" prefHeight="20.0" prefWidth="150.0" progress="0.0" />
+      <ProgressBar fx:id="enemyHealthBar" layoutX="271.0" layoutY="54.0" prefHeight="20.0" prefWidth="150.0" progress="0.0" />
+      <Button fx:id="attackButton" layoutX="200.0" layoutY="261.0" mnemonicParsing="false" onAction="#onAttackClicked" text="Attack" />
+   </children>
+</Pane>
