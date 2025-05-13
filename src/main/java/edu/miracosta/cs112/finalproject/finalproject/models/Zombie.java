@@ -13,7 +13,7 @@ public class Zombie extends Enemy {
     /********** CONSTRUCTORS **********/
 
     public Zombie(int hp, Weapon weapon, int regen) {
-        super(hp, weapon);
+        super(hp, weapon, "/images/zombie.png");
         this.regen = regen;
     }
 
@@ -42,6 +42,7 @@ public class Zombie extends Enemy {
 
     public void doesZombieRegen() {
         this.hp += regen;
+        System.out.println("regen!");
 
     }
 

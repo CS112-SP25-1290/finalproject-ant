@@ -8,7 +8,11 @@ public class Slime extends Enemy {
     public static final Weapon DEFAULT_WEAPON = new Weapon();
 
 
+    /********** CONSTRUCTORS **********/
 
+    public Slime(int hp, Weapon weapon) {
+        super(hp, weapon, "/images/slime.png");
+    }
     /*********ABSTRACT METHODS*********/
 
     @Override

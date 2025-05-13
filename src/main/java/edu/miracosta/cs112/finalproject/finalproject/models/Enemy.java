@@ -1,6 +1,12 @@
 package edu.miracosta.cs112.finalproject.finalproject.models;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
 
 public abstract class Enemy {
+
+    /******** IMAGES *********/
+    private ImageView enemyImage;
 
     /********** CONSTANTS **********/
     public static final int DEFAULT_HP = 10;
@@ -14,15 +20,16 @@ public abstract class Enemy {
 
     /********** CONSTRUCTORS **********/
 
-    public Enemy() {
-        this(DEFAULT_HP, DEFAULT_WEAPON);
+    public Enemy(String imagePath) {
+        this(DEFAULT_HP, DEFAULT_WEAPON, imagePath);
     }
 
-    public Enemy(int hp, Weapon weapon) {
+    public Enemy(int hp, Weapon weapon, String imagePath) {
         if(!this.setAll(hp, weapon)) {
             System.out.println("Bad data given to full enemy constructor");
         } else {
             this.maxHP = hp;
+            this.enemyImage = new ImageView(new Image(getClass().getResourceAsStream(imagePath)));
         }
     }
 
@@ -64,6 +71,10 @@ public abstract class Enemy {
 
     public int getMaxHP() {
         return this.maxHP;
+    }
+
+    public ImageView getEnemyImage() {
+        return this.enemyImage;
     }
 
     /********** OTHER REQUIRED METHODS **********/

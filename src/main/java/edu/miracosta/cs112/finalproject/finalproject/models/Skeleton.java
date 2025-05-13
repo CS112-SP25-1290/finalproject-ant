@@ -15,7 +15,7 @@ public class Skeleton extends Enemy {
     /********** CONSTRUCTORS **********/
 
     public Skeleton(int hp, Weapon weapon, int dodgeChance) {
-        super(hp, weapon);
+        super(hp, weapon, "/images/skeleton.png");
         this.dodgeChance = dodgeChance;
     }
 
