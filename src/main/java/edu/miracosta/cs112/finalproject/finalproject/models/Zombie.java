@@ -13,7 +13,7 @@ public class Zombie extends Enemy {
     /********** CONSTRUCTORS **********/
 
     public Zombie(int hp, Weapon weapon, int regen) {
-        super(hp, weapon, "/images/zombie.png");
+        super(hp, weapon, "/images/ZombieVillager.png");
         this.regen = regen;
     }
 
