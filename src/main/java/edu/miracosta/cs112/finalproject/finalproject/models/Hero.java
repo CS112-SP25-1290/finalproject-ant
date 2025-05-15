@@ -37,10 +37,9 @@ public abstract class Hero {
         this(DEFAULT_NAME, DEFAULT_HEARTS, DEFAULT_WEAPON1);
     }
 
-    public Hero(Hero original) {
+    public Hero(Hero original) throws IllegalArgumentException {
         if (original == null) {
-            System.out.println("ERROR: null data given to copy constructor");
-            System.exit(0);
+            throw new IllegalArgumentException ("ERROR: null data given to copy constructor");
         } else {
             this.setAll(original.name, original.hearts, original.weapon);
         }

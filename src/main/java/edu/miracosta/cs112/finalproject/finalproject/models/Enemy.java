@@ -24,9 +24,9 @@ public abstract class Enemy {
         this(DEFAULT_HP, DEFAULT_WEAPON, imagePath);
     }
 
-    public Enemy(int hp, Weapon weapon, String imagePath) {
+    public Enemy(int hp, Weapon weapon, String imagePath) throws IllegalArgumentException {
         if(!this.setAll(hp, weapon)) {
-            System.out.println("Bad data given to full enemy constructor");
+            throw new IllegalArgumentException ("Bad data given to full enemy constructor");
         } else {
             this.maxHP = hp;
             this.enemyImage = new ImageView(new Image(getClass().getResourceAsStream(imagePath)));
