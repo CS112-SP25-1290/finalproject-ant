@@ -11,7 +11,7 @@ public class Slime extends Enemy {
     /********** CONSTRUCTORS **********/
 
     public Slime(int hp, Weapon weapon) {
-        super(hp, weapon, "/images/slime.png");
+        super(hp, weapon, "/images/SlimeBetter.png");
     }
     /*********ABSTRACT METHODS*********/
 
