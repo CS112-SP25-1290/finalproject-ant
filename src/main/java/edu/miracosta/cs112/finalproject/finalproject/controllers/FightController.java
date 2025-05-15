@@ -36,7 +36,7 @@ public class FightController {
         this.player = player;
 
         if(player instanceof Steve) {
-          playerImage.setImage(new Image(getClass().getResourceAsStream("/images/steve.png")));
+          playerImage.setImage(new Image(getClass().getResourceAsStream("/images/SteveAngel.png")));
         } else if (player instanceof Alex) {
             playerImage.setImage(new Image(getClass().getResourceAsStream("/images/alex.png")));
         }
