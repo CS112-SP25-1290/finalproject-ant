@@ -44,7 +44,7 @@ public class FightController {
         //cant use initalize because at the time javafx runs, it won't know who we are playing as, so we manually start the fight here
 
         enemies = List.of(
-                new Zombie(20, new Weapon("Fist", 2), 3),
+                new Zombie(20, new Weapon("Fist", 2), 2),
                 new Skeleton(15, new Weapon("Sword", 3), 3),
                 new Slime(20, new Weapon("Fist", 1)));
         fightStart();
