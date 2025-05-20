@@ -11,6 +11,8 @@ import javafx.scene.image.Image;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.animation.PauseTransition;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -61,6 +63,7 @@ public class FightController {
         //Get the current enemy
         Enemy enemy = enemies.get(currentEnemyNumber);
         enemyImage.setImage(enemy.getEnemyImage().getImage());
+
         //Hero attacks!
         boolean hitLanded = player.takeTurn(enemy);
 
@@ -68,17 +71,13 @@ public class FightController {
             System.out.println("Enemy dodged the attack"); //Made for the skeleton
         }
 
-        //Check if the enemy is alive
-        if(enemy.isAlive()) {
-            enemy.takeTurn(player);
-        }
-
         updateHealthBar();
 
         //Is the fight over?
-        if(!player.isAlive()) {
+        if (!player.isAlive()) {
             System.out.println("You died!");
-        } else if(!enemy.isAlive()) {
+        }
+        if(!enemy.isAlive()) {
             currentEnemyNumber++;
             if(currentEnemyNumber < enemies.size()) {
                 fightStart(); //move on to the next enemy
@@ -91,12 +90,22 @@ public class FightController {
                 window.setScene(winViewScene);
                 window.show();
             }
+            return; //leaves the method if the enemy is dead
         }
+
+        PauseTransition delay = new PauseTransition(Duration.seconds(1));
+        delay.setOnFinisehd(e -> {
+           enemy.takeTurn()
+        });
+
 
 
 
 
     }
+
+
+
 
     private void updateHealthBar() {
         Enemy currentEnemy = enemies.get(currentEnemyNumber);

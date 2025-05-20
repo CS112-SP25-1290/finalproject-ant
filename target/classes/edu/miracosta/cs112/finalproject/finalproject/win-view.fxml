@@ -3,14 +3,16 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="357.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="168.0" fitWidth="146.0" layoutX="72.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="679.0" fitWidth="521.0" layoutX="-48.0" layoutY="-22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../images/Clouds.png" />
+         </image></ImageView>
+      <ImageView fitHeight="521.0" fitWidth="309.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../images/wizard.png" />
          </image>
       </ImageView>
    </children>
 </Pane>
-
-
