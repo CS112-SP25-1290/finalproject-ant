@@ -17,10 +17,12 @@ public class Weapon {
      * @param damage
      *
      */
-    public Weapon(String name, int damage) {
+    public Weapon(String name, int damage)  throws IllegalArgumentException {
         if(!this.setAll(name, damage)) {
-            System.out.println("ERROR: invalid data given to full Weapon constructor. Shutting down");
-            System.exit(0);
+            throw new IllegalArgumentException ("Bad data given to full Weapon constructor");
+        } else {
+            this.name = name;
+            this.damage = damage;
         }
     }
     /** DEFAULT CONSTRUCTOR
