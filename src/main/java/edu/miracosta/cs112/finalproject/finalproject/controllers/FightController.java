@@ -73,10 +73,6 @@ public class FightController {
 
         updateHealthBar();
 
-        //Is the fight over?
-        if (!player.isAlive()) {
-            System.out.println("You died!");
-        }
         if(!enemy.isAlive()) {
             currentEnemyNumber++;
             if(currentEnemyNumber < enemies.size()) {
@@ -94,9 +90,15 @@ public class FightController {
         }
 
         PauseTransition delay = new PauseTransition(Duration.seconds(1));
-        delay.setOnFinisehd(e -> {
-           enemy.takeTurn()
+        delay.setOnFinished(e -> {
+           enemy.takeTurn(player);
+           updateHealthBar();
+
+           if(!player.isAlive()) {
+               System.out.println("You died!");
+           }
         });
+        delay.play();
 
 
 
