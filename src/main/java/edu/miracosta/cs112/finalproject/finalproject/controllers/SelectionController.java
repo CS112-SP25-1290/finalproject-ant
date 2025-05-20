@@ -19,7 +19,7 @@ public class SelectionController {
 
     @FXML
     public void onSteveClicked(MouseEvent mouseEvent) throws IOException {
-        Hero selectedHero = new Steve("Steve", 500, new Weapon("Sword", 3));
+        Hero selectedHero = new Steve("Steve", 20, new Weapon("Sword", 3));
         switchToFight(mouseEvent, selectedHero);
     }
 

@@ -4,7 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.miracosta.cs112.finalproject.finalproject.controllers.FightController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.miracosta.cs112.finalproject.finalproject.controllers.FightController">
    <children>
       <ImageView fitHeight="450.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -25,8 +25,17 @@
       <Label layoutX="528.0" layoutY="40.0" text="Enemy Health" />
       <ProgressBar fx:id="playerHealthBar" layoutX="135.0" layoutY="60.0" prefHeight="20.0" prefWidth="150.0" progress="0.0" />
       <ProgressBar fx:id="enemyHealthBar" layoutX="490.0" layoutY="60.0" prefHeight="20.0" prefWidth="150.0" progress="0.0" />
-      <Button fx:id="attackButton" layoutX="375.0" layoutY="403.0" mnemonicParsing="false" onAction="#onAttackClicked" text="Attack" />
       <ImageView fx:id="enemyImage" fitHeight="180.0" fitWidth="180.0" layoutX="475.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="playerImage" fitHeight="180.0" fitWidth="180.0" layoutX="142.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="playerImage" fitHeight="180.0" fitWidth="180.0" layoutX="142.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="attackButton" fitHeight="70.0" fitWidth="70.0" layoutX="287.0" layoutY="370.0" onMouseClicked="#onAttackClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../images/Attack.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="healButton" fitHeight="70.0" fitWidth="70.0" layoutX="440.0" layoutY="370.0" onMouseClicked="#onHealClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../images/Heal.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

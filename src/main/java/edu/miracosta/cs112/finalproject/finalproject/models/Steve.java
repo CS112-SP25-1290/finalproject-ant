@@ -40,6 +40,9 @@ public class Steve extends Hero {
 
     /************** OTHER METHODS ***************/
 
-
+    public void heal(int amount) {
+        hearts += amount;
+        if(hearts > 20) hearts = 20;
+    }
 
 }

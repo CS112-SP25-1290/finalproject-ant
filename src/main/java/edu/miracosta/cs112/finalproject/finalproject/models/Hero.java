@@ -9,7 +9,7 @@ public abstract class Hero {
 
     /************ INSTANCE VARIABLES *************/
     private String name = null;
-    private int hearts = 0;
+    protected int hearts = 0;
     private Weapon weapon = null;
     protected int maxHearts;
 
@@ -147,11 +147,15 @@ public abstract class Hero {
         }
     }
 
+
+
     /*********** ABSTRACT METHODS *************/
 
     public boolean takeTurn(Enemy enemy) {
         return enemy.takeDamage(this.getWeapon().getDamage());
     }
+
+    public abstract void heal(int amount);
 
 
 

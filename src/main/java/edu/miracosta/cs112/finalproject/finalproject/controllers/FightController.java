@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.animation.PauseTransition;
 import javafx.util.Duration;
@@ -23,8 +24,7 @@ public class FightController {
     private ProgressBar playerHealthBar;
     @FXML
     private ProgressBar enemyHealthBar;
-    @FXML
-    private Button attackButton;
+
 
     private Hero player;
     private List<Enemy> enemies; //Is list the same as ArrayList?
@@ -34,13 +34,18 @@ public class FightController {
     @FXML
     private ImageView enemyImage;
 
+    @FXML
+    private ImageView attackButton;
+    @FXML
+    private ImageView healButton;
+
     public void initHero(Hero player) {
         this.player = player;
 
         if(player instanceof Steve) {
-          playerImage.setImage(new Image(getClass().getResourceAsStream("/images/SteveAngel.png")));
+          playerImage.setImage(new Image(getClass().getResourceAsStream("/images/Steve.png")));
         } else if (player instanceof Alex) {
-            playerImage.setImage(new Image(getClass().getResourceAsStream("/images/alex.png")));
+            playerImage.setImage(new Image(getClass().getResourceAsStream("/images/Alex.png")));
         }
 
         //cant use initalize because at the time javafx runs, it won't know who we are playing as, so we manually start the fight here
@@ -59,7 +64,7 @@ public class FightController {
     }
 
     @FXML
-    private void onAttackClicked() throws IOException {
+    private void onAttackClicked(MouseEvent mouseEvent) throws IOException {
         //Get the current enemy
         Enemy enemy = enemies.get(currentEnemyNumber);
         enemyImage.setImage(enemy.getEnemyImage().getImage());
@@ -89,6 +94,9 @@ public class FightController {
             return; //leaves the method if the enemy is dead
         }
 
+        attackButton.setDisable(true);
+        healButton.setDisable(true);
+
         PauseTransition delay = new PauseTransition(Duration.seconds(1));
         delay.setOnFinished(e -> {
            enemy.takeTurn(player);
@@ -97,16 +105,41 @@ public class FightController {
            if(!player.isAlive()) {
                System.out.println("You died!");
            }
+
+            attackButton.setDisable(false);
+            healButton.setDisable(false);
         });
         delay.play();
 
-
-
-
-
     }
 
+    @FXML
+    private void onHealClicked(MouseEvent mouseEvent) throws IOException {
+        int healAmount = 10;
+        player.heal(healAmount);
+        System.out.println(player.getName() + " healed for " + healAmount + " HP!");
 
+        updateHealthBar();
+
+        attackButton.setDisable(true);
+        healButton.setDisable(true);
+
+        PauseTransition delay = new PauseTransition(Duration.seconds(1));
+        Enemy enemy = enemies.get(currentEnemyNumber);
+        delay.setOnFinished(e -> {
+            enemy.takeTurn(player);
+            updateHealthBar();
+
+            if(!player.isAlive()) {
+                System.out.println("You died!");
+            }
+
+            attackButton.setDisable(false);
+            healButton.setDisable(false);
+        });
+        delay.play();
+
+    }
 
 
     private void updateHealthBar() {
