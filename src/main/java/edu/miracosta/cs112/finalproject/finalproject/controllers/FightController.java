@@ -104,6 +104,18 @@ public class FightController {
 
            if(!player.isAlive()) {
                System.out.println("You died!");
+                   FXMLLoader loseView = new FXMLLoader(getClass().getResource("/edu/miracosta/cs112/finalproject/finalproject/lose-view.fxml"));
+               Parent root = null;
+               try {
+                   root = loseView.load();
+               } catch (IOException ex) {
+                   throw new RuntimeException(ex);
+               }
+               Scene winViewScene = new Scene(root);
+                   Stage window = (Stage) attackButton.getScene().getWindow();
+                   window.setScene(winViewScene);
+                   window.show();
+
            }
 
             attackButton.setDisable(false);

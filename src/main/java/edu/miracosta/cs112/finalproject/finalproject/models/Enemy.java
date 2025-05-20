@@ -29,7 +29,11 @@ public abstract class Enemy {
             throw new IllegalArgumentException ("Bad data given to full enemy constructor");
         } else {
             this.maxHP = hp;
-            this.enemyImage = new ImageView(new Image(getClass().getResourceAsStream(imagePath)));
+            try {
+                this.enemyImage = new ImageView(new Image(getClass().getResourceAsStream(imagePath)));
+            } catch (Exception e) {
+                throw new ImageLoadException("Failed to load enemy image with path: " + imagePath);
+            }
         }
     }
 
