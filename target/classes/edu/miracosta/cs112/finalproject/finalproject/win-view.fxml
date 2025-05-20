@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
@@ -9,10 +10,15 @@
          <image>
             <Image url="@../../../../../images/Clouds.png" />
          </image></ImageView>
-      <ImageView fitHeight="521.0" fitWidth="309.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="257.0" fitWidth="218.0" layoutX="8.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../images/wizard.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="172.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../images/white-thought-bubble-md.png" />
+         </image></ImageView>
+      <Label layoutX="210.0" layoutY="126.0" prefHeight="53.0" prefWidth="89.0" text="You won !!!" />
    </children>
 </Pane>
