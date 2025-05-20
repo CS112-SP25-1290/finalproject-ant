@@ -17,6 +17,6 @@ public class Slime extends Enemy {
 
     @Override
     public void takeTurn(Hero hero) {
-
+        hero.takeDamage(this.weapon.getDamage());
     }
 }
