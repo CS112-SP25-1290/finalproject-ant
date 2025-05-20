@@ -27,7 +27,7 @@ public class Alex extends Hero {
     @Override
     public void heal(int amount) {
         hearts += amount;
-        if(hearts > 20) hearts = 20;
+        if(hearts > maxHearts) hearts = maxHearts;
     }
 
 }
