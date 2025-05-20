@@ -52,7 +52,6 @@ public class Skeleton extends Enemy {
     @Override
     public boolean takeDamage(int damage) {
         if(rollDodgeChance()) {
-            System.out.println("Dodge");
             return false; //No damage
         } else {
             super.takeDamage(damage);
