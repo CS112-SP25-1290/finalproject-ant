@@ -24,3 +24,12 @@ public class HelloApplication extends Application {
         launch();
     }
 }
+
+/*
+CITATIONS
+
+CHATGPT: Used for error checking mainly (looked at all the code just to find a typo
+https://docs.oracle.com/javase/8/javafx/api/javafx/animation/PauseTransition.html
+https://www.tutorialspoint.com/javafx/javafx_pause_transition.htm
+Used to learn about pause transition for the FightController
+ */
